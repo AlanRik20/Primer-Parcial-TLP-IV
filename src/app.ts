@@ -8,8 +8,15 @@
 // soporte.agregarObservador(equipo)
 // soporte.cambiarEstado("en reparación")
 
-import { Factory } from "./PatronFactory"
+// PATRON FACTORY
 
-const server = new Factory()
-console.log(server.crearEquipo("Servidor","dell poweredge", "32gb","xeon"))
+// import { Factory } from "./PatronFactory"
 
+// const server = new Factory()
+// console.log(server.crearEquipo("Servidor","dell poweredge", "32gb","xeon"))
+
+import { Configuracion } from "./PatronSingleton"
+const conf1=Configuracion.obtenerInstancia()
+const conf2=Configuracion.obtenerInstancia()
+conf1.set("modo","produccion")
+console.log(conf2.get("modo"))
