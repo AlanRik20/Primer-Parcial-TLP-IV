@@ -1,18 +1,21 @@
 export class Configuracion {
-private static instancia: Configuracion;
+  private static instancia: Configuracion;
+  private data: { [key: string]: string } = {};
 
- private constructor() {}
+  private constructor() {}
 
-public static obtenerInstancia(): Configuracion {
-if (!Configuracion.instancia) {
-Configuracion.instancia = new Configuracion();
-}
-return Configuracion.instancia;
-}
+  public static obtenerInstancia(): Configuracion {
+    if (!Configuracion.instancia) {
+      Configuracion.instancia = new Configuracion();
+    }
+    return Configuracion.instancia;
+  }
 
-set(name:string, estado:string){
-}
+  public set(clave: string, valor: string) {
+    this.data[clave] = valor;
+  }
 
-get(name:string){}
-
+  public get(clave: string) {
+    return this.data[clave];
+  }
 }
